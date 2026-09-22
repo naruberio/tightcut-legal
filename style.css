@@ -1,0 +1,41 @@
+/* Tightcut 法務・サポートページの共通スタイル。
+   ページごとに <style> を写すと 7 か所の重複になるので 1 本に寄せる。 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+    "Noto Sans JP", system-ui, sans-serif;
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem 4rem;
+  line-height: 1.75;
+  color: #1f2328;
+  background: #fff;
+}
+h1,
+h2,
+h3 { font-weight: 600; line-height: 1.35; }
+h1 { font-size: 1.7rem; }
+h2 {
+  font-size: 1.15rem;
+  margin-top: 2.2rem;
+  border-bottom: 1px solid #e6e8eb;
+  padding-bottom: 0.3rem;
+}
+h3 { font-size: 1rem; margin-top: 1.6rem; }
+a { color: #0a6a4b; }
+a:hover { text-decoration: underline; }
+ul { padding-left: 1.2rem; }
+li { margin: 0.25rem 0; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+th,
+td { border: 1px solid #e6e8eb; padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+th { background: #f6f8f7; font-weight: 600; }
+td.center { text-align: center; }
+.meta { color: #656d76; font-size: 0.95rem; }
+.lede { background: #f3f8f6; border-left: 4px solid #0a6a4b; padding: 0.8rem 1rem; margin: 1.2rem 0; }
+footer {
+  margin-top: 3rem;
+  color: #656d76;
+  font-size: 0.9rem;
+  border-top: 1px solid #e6e8eb;
+  padding-top: 1rem;
+}

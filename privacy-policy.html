@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Tightcut</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p class="meta"><a href="index.html">&larr; Legal &amp; Support</a> | <a href="privacy-policy-ja.html">日本語</a></p>
+  <h1>Privacy Policy — Tightcut</h1>
+  <p class="meta">Last updated: September 23, 2026</p>
+
+  <p>Naruberio LLC (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) provides this Privacy Policy to explain how the iOS
+  application <strong>Tightcut</strong> (the &quot;App&quot;) handles your information.</p>
+
+  <div class="lede">
+    <strong>The short version.</strong> Tightcut runs entirely on your iPhone. It has no account, no server of
+    ours, and <strong>never connects to the network</strong>. Your video is read, analysed, and written back out on
+    the device. Because we receive nothing, there is nothing for us to lose, sell, or hand over.
+  </div>
+
+  <h2>1. Information we collect</h2>
+  <p><strong>None.</strong> The App collects no personal information.</p>
+  <table>
+    <tr><th>Information category</th><th>Collected?</th><th>Reason</th></tr>
+    <tr><td>Name, email, contact details</td><td class="center">No</td><td>There are no accounts and no sign-up</td></tr>
+    <tr><td>Your videos, audio, photos, and files</td><td class="center">No</td><td>Processed on your device only; never transmitted</td></tr>
+    <tr><td>Location</td><td class="center">No</td><td>Not used by any feature</td></tr>
+    <tr><td>Device or advertising identifiers</td><td class="center">No</td><td>No tracking, no ads</td></tr>
+    <tr><td>Usage analytics, crash reports</td><td class="center">No</td><td>No analytics or crash-reporting SDK is integrated</td></tr>
+  </table>
+  <p>We declare <strong>&quot;Data Not Collected&quot;</strong> in the App Privacy details on the App Store and in the
+  App&#39;s privacy manifest (<code>PrivacyInfo.xcprivacy</code>). We do not track you, and the App shows no App
+  Tracking Transparency prompt because there is nothing to track.</p>
+
+  <h3>Required Reason APIs</h3>
+  <p>Apple requires developers to declare the reason for using certain APIs. The App declares the following, both
+  strictly on-device:</p>
+  <table>
+    <tr><th>API category</th><th>Reason code</th><th>What it is for</th></tr>
+    <tr><td>User defaults</td><td><code>CA92.1</code></td><td>Remembering your settings — sensitivity, breathing room, speed, order, sound, and cutout quality</td></tr>
+    <tr><td>File timestamp</td><td><code>0A2A.1</code></td><td>Creating, deleting, and excluding the App&#39;s own working files from device backups</td></tr>
+  </table>
+
+  <h2>2. Where your files are stored</h2>
+  <p>On your device. While a job runs, the App writes intermediate files to its own temporary directory and deletes
+  them when the job finishes — and again at the next launch, in case the App was interrupted. The finished file is
+  kept in Application Support until you save or share it; <strong>only the most recent one is kept</strong>, and it
+  is excluded from device backups.</p>
+  <p>The App does not use iCloud sync.</p>
+
+  <h2>3. Permissions</h2>
+  <table>
+    <tr><th>Permission</th><th>When it is requested</th><th>Can you decline?</th></tr>
+    <tr><td><strong>Photos (add only)</strong></td><td>Only when you save a finished video to your photo library</td><td>Yes. Use Share or Save to Files instead</td></tr>
+  </table>
+  <p>The App asks for <strong>add-only</strong> access, which lets it write a file to your library but
+  <strong>not read it</strong>. When you pick a clip from Photos, the system picker runs outside the App and hands
+  over only the one file you chose, so the App never sees the rest of your library.</p>
+  <p>The App does not request camera, microphone, contacts, location, Health, or Bluetooth access.</p>
+
+  <h2>4. How your clip is processed</h2>
+  <ul>
+    <li><strong>Removing silence.</strong> The App measures the loudness of the audio over time, on the device, to
+    decide which stretches count as silence. It does <strong>not</strong> transcribe speech, recognise words, or
+    identify speakers.</li>
+    <li><strong>Changing the background.</strong> Person detection uses Apple&#39;s on-device Vision framework. The
+    green-screen option compares colours. No frame leaves the device, and no image is used to train anything.</li>
+    <li><strong>Playing backwards.</strong> Frames and audio are re-written locally in reverse order.</li>
+  </ul>
+  <p>Everything you pick runs in a single export on your device. Nothing is queued, uploaded, or processed
+  remotely.</p>
+
+  <h2>5. Third parties</h2>
+  <p>There are none. The App contains <strong>no</strong> third-party SDKs, no analytics (Google Analytics,
+  Firebase, and the like), no advertising networks, and no crash-reporting services. It makes no network requests
+  of any kind.</p>
+  <p>Apple processes your purchase of the App through the App Store. We never see your payment details. Apple&#39;s
+  Privacy Policy applies to that transaction:
+  <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></p>
+
+  <h2>6. Purchases</h2>
+  <p>Tightcut is a <strong>paid app with a single up-front price</strong>. There are <strong>no in-app purchases,
+  no subscriptions, and no advertising</strong>.</p>
+
+  <h2>7. Children</h2>
+  <p>The App is not directed to children. It does not knowingly collect personal information from anyone, including
+  children.</p>
+
+  <h2>8. Your rights (GDPR / CCPA / APPI)</h2>
+  <p>Because we hold no data about you, there is nothing for us to disclose, correct, export, or delete on request.</p>
+  <p>Everything the App stores is under your control on your device. Deleting the App removes all of its data from
+  your device.</p>
+
+  <h2>9. Changes to this Policy</h2>
+  <p>We may revise this Policy when the law or the App changes. The &quot;Last updated&quot; date above changes
+  accordingly, and significant changes will be noted on this page.</p>
+
+  <h2>10. Contact</h2>
+  <ul>
+    <li><strong>Entity</strong>: Naruberio LLC (合同会社ナルベリオ)</li>
+    <li><strong>Email</strong>: <a href="mailto:konpei.work@gmail.com">konpei.work@gmail.com</a></li>
+  </ul>
+
+  <footer>Tightcut is published by Naruberio LLC. Contact: <a href="mailto:konpei.work@gmail.com">konpei.work@gmail.com</a></footer>
+</body>
+</html>
