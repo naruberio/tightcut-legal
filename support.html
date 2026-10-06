@@ -7,63 +7,68 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p class="meta"><a href="index.html">&larr; Legal &amp; Support</a> | <a href="support-ja.html">日本語</a></p>
+  <p class="meta"><a href="support-ja.html" lang="ja" hreflang="ja">日本語版</a> · <a href="index.html">Tightcut home</a></p>
   <h1>Support — Tightcut</h1>
 
-  <p>Thank you for using <strong>Tightcut</strong> — it drops the parts of a clip where nobody speaks, so a long
-  take becomes a short one. One-time purchase: no subscription, no in-app purchases, no ads, no watermark.</p>
+  <p>Thanks for choosing <strong>Tightcut</strong>. It turns a long recording of someone talking into a shorter one by
+  lifting out the pauses. You pay once: there is no subscription, nothing to buy inside it, no ads, and no
+  watermark on what you export.</p>
 
-  <h2>Contact</h2>
-  <p><strong>Email:</strong> <a href="mailto:konpei.work@gmail.com">konpei.work@gmail.com</a></p>
-  <p>Response time: typically within 1 week.</p>
-  <p>When you write, it helps to include your iOS version, your iPhone model, and what you were doing when the
-  problem happened. Please do <strong>not</strong> send us your videos — we cannot read them and we do not want a
-  copy.</p>
+  <h2 id="gaps">Getting the right gaps</h2>
 
-  <h2>Frequently asked questions</h2>
+  <h3>Nothing was cut.</h3>
+  <p>The room is probably louder than the level Tightcut counts as quiet. Change <strong>Sensitivity</strong> to
+  <strong>Loose</strong>, which lets a noisier room pass as quiet. Still nothing? Under <strong>Detection</strong>,
+  switch on <strong>Set the level myself</strong> and raise the level until gaps show up in
+  <strong>Parts to remove</strong>.</p>
 
-  <h3>It did not cut anything.</h3>
-  <p>Your background noise is probably louder than the level Tightcut treats as silence. Set
-  <strong>Sensitivity</strong> to <strong>Loose</strong>, which accepts a louder room as quiet. If that is still not
-  enough, turn on <strong>Set the level myself</strong> in the Detection section and raise the level until the quiet
-  parts appear in the list.</p>
+  <h3>The whole clip came out as silence.</h3>
+  <p>This is the reverse problem: every part of the recording sits under the level. Pick
+  <strong>Strict</strong> for <strong>Sensitivity</strong>, or bring the level down yourself.</p>
 
-  <h3>It said everything was silence.</h3>
-  <p>The opposite case: the whole clip sits below the level. Set <strong>Sensitivity</strong> to
-  <strong>Strict</strong>, or lower the level by hand.</p>
+  <h3>Words lose their first or last sound.</h3>
+  <p>Turn up <strong>Breathing room</strong>. It leaves a short margin of sound on each side of every cut, so speech
+  is not chopped.</p>
 
-  <h3>It cut in the middle of a word.</h3>
-  <p>Increase <strong>Breathing room</strong>. It keeps a little sound before and after each cut, so words are not
-  clipped.</p>
+  <h3>One gap should stay in.</h3>
+  <p>Tap its row in <strong>Parts to remove</strong> and that stretch remains in the finished clip.
+  <strong>Shorter by</strong> is worked out again each time you change your mind.</p>
 
-  <h3>I want to keep one of the cuts.</h3>
-  <p>In <strong>Parts to remove</strong>, tap the row you want to keep. It stays in the finished clip. The
-  <strong>Shorter by</strong> figure updates as you change your mind.</p>
+  <h2 id="steps">Background and reverse</h2>
 
-  <h3>Why can I not reverse a clip with a transparent background?</h3>
-  <p>Reversing rewrites every frame, and the transparency does not survive that rewrite — the result would quietly
-  come out opaque. Rather than hand you a broken file, Tightcut refuses the combination and says so. Pick a colour,
-  a photo, or a blur as the background if you also want to play the clip backwards.</p>
+  <h3>Reverse is refused while the background is Transparent.</h3>
+  <p>Reversing rebuilds every frame, and transparency is lost in that rebuild — the video would quietly turn
+  opaque. Tightcut declines the pairing and explains why, so that you are not left with a damaged file. If you want
+  reverse as well, set the background to <strong>Color</strong>, <strong>Photo</strong> or
+  <strong>Blur</strong>.</p>
 
-  <h3>The exported file looks re-encoded.</h3>
-  <p>Some source formats cannot be written out without re-encoding, and every step other than removing silence has
-  to redraw the picture. Tightcut re-encodes rather than failing, and keeps the size and frame rate of your original.</p>
+  <h2 id="after">After exporting</h2>
 
-  <h3>Saving to Photos failed.</h3>
-  <p>Tightcut asks for add-only access to your photo library. If you declined it, open the iOS Settings app,
-  find Tightcut, and allow adding photos — or use <strong>Share</strong> or <strong>Save to Files</strong> instead,
-  which need no permission at all.</p>
+  <h3>The export seems to have been re-encoded.</h3>
+  <p>Any step other than removing silence must redraw the picture, and some formats cannot be copied across
+  unchanged in the first place. In those cases Tightcut re-encodes, keeping the frame size and frame rate of your
+  original.</p>
 
-  <h3>How do I request a refund?</h3>
-  <p>Refunds are handled by Apple, not by us. Use
+  <h3>Save to Photos did not work.</h3>
+  <p>The only access Tightcut asks for is adding videos to Photos. If you said no, open the iOS Settings app, go to
+  Tightcut, and let it add photos. <strong>Share</strong> and <strong>Save to Files</strong> need no permission, so
+  either one is a way around it.</p>
+
+  <h2 id="buying">Buying</h2>
+
+  <h3>Can I get my money back?</h3>
+  <p>Apple handles refunds, not us. Ask through
   <a href="https://support.apple.com/HT204084">Apple&#39;s refund request page</a>.</p>
 
-  <h2>Legal</h2>
-  <ul>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="terms.html">Terms of Service</a></li>
-  </ul>
+  <h2 id="email">Writing to us</h2>
+  <p>Send an email to <a href="mailto:konpei.work@gmail.com">konpei.work@gmail.com</a>. We usually reply within a
+  week.</p>
+  <p>Mentioning your iPhone model, your iOS version and the steps that led to the problem helps us find it faster.
+  Please <strong>leave the video out</strong> — we cannot open it, and we would rather not hold a copy.</p>
 
-  <footer>Tightcut is published by Naruberio LLC. Contact: <a href="mailto:konpei.work@gmail.com">konpei.work@gmail.com</a></footer>
+  <p>Also on this site: <a href="privacy-policy.html">Privacy Policy</a> ·
+  <a href="terms.html">Terms of Service</a></p>
+
+  <footer>Tightcut · Naruberio LLC · <a href="mailto:konpei.work@gmail.com">konpei.work@gmail.com</a></footer>
 </body>
 </html>
