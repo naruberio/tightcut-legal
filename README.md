@@ -3,8 +3,8 @@
 | 項目 | 内容 |
 | --- | --- |
 | 作成日 | 2026-09-23 |
-| 更新日 | 2026-09-23 |
-| バージョン | 2026.09.23 |
+| 更新日 | 2026-10-06 |
+| バージョン | 2026.10.06 |
 | 作成者 | 大森 |
 | 更新者 | 大森 |
 
@@ -45,19 +45,35 @@ Markdown + Jekyll ではなく **HTML を正本**にする（mixroll-legal と�
 
 ## 改訂方針
 
-App Store 提出版と一致させる。とくに次の 3 点は `tightcut-app` 側の実装と食い違わせない。
+App Store 提出版と一致させる。とくに次の記述は `tightcut-app` 側の実装と食い違わせない。
 
 | 記述 | 実装側の根拠 |
 | --- | --- |
-| 通信ゼロ・第三者 SDK ゼロ | Swift ソースに `URLSession` / `http` の参照が 0 件 |
+| 通信ゼロ・第三者 SDK ゼロ | Swift ソースに `URLSession` が 0 件。`https://` は設定画面（`SettingsView.swift`）の `Link` 2 件のみで、ブラウザで開く。外部パッケージは `project.yml` の `packages: {}`（0 件） |
 | 写真ライブラリは**書き込みのみ** | `PhotoLibrarySaver.swift` の `.addOnly` / `Info.plist` に `NSPhotoLibraryAddUsageDescription` のみ |
 | Required Reason API は 2 つ | `PrivacyInfo.xcprivacy` の `CA92.1` / `0A2A.1` |
+| 写真の動画は一時フォルダへ複製、ファイルは置き場所のまま読む | `ImportView.swift`（`PickedMedia` が `TemporaryWorkspace.inputsRoot` へ複製・`fileImporter` はセキュリティスコープで読む） |
+| 複製は別の素材を開く／「最初から」で消え、遅くとも次の起動で消える | `AppModel.swift` の `open` / `startOver`（`TemporaryWorkspace.purgeInputs`）・`TightcutApp.swift` の `TemporaryWorkspace.purgeStaleSessions()` |
+| 仕上がりは Application Support に最新 1 本だけ・バックアップ対象外・起動時に片づける | `ExportStore.swift`（`isExcludedFromBackup`）・`TightcutApp.swift` の `ExportStore.purge()` |
+| UserDefaults に覚える値の一覧 | `AppModel.swift` の `Keys` と、切り抜きの精度の `SegmentationQuality.storageKey`（`BackgroundVideoPipeline.swift`。読み書きは `AppModel.swift`）。**`Keys` だけを見ると 1 つ漏れる** |
 
 App Privacy（ASC の「Appのプライバシー」）の公開は **API では行えない**（ASC の UI 操作）。
 ここに書いた内容と ASC 側の申告を食い違わせないこと。
 
 アプリ側の設定画面からこの URL へリンクしているので、リンク先を変える場合は
 `tightcut-app` の `Tightcut/Sources/Features/Settings/SettingsView.swift` も併せて直す。
+
+## 他アプリの法務ページを写さない（KAN-891）
+
+2026-10-06 に 6 ページすべてを書き直した。初版（KAN-833）は引退済みの自社アプリ
+（Silencut ほか）の法務ページを写して作っており、利用規約は Silencut と 342 語連続・被覆 82% で
+一致していた（KAN-891 起票時の測定）。Guideline 4.3(a) はアカウント内で似ているだけでも対象になるため、
+**見出しの順・決まり文句・段落の組み方を、ほかの `*-legal` リポジトリから写さない。**
+
+改訂するときも、実質の項目（無保証・責任の制限・消費者保護・準拠法と管轄など）は残したまま、
+文面は Tightcut の処理の流れに沿って書く。改訂後は、ほかの `*-legal` の同じ種類のページと
+重なりを測る（アプリ名を同じ記号に置き換え、英語は 8 語以上・日本語は 20 字以上の一致を数える）。
+目安は、ほかのアプリどうしの対の中央値以下。
 
 ## サポート連絡先
 
