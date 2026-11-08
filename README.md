@@ -3,8 +3,8 @@
 | 項目 | 内容 |
 | --- | --- |
 | 作成日 | 2026-09-23 |
-| 更新日 | 2026-10-06 |
-| バージョン | 2026.10.06 |
+| 更新日 | 2026-11-08 |
+| バージョン | 2026.11.08 |
 | 作成者 | 大森 |
 | 更新者 | 大森 |
 
@@ -50,12 +50,14 @@ App Store 提出版と一致させる。とくに次の記述は `tightcut-app` 
 | 記述 | 実装側の根拠 |
 | --- | --- |
 | 通信ゼロ・第三者 SDK ゼロ | Swift ソースに `URLSession` が 0 件。`https://` は設定画面（`SettingsView.swift`）の `Link` 2 件のみで、ブラウザで開く。外部パッケージは `project.yml` の `packages: {}`（0 件） |
-| 写真ライブラリは**書き込みのみ** | `PhotoLibrarySaver.swift` の `.addOnly` / `Info.plist` に `NSPhotoLibraryAddUsageDescription` のみ |
+| 写真ライブラリは**書き込みのみ** | `PhotoLibrarySaver.swift` の `.addOnly` / 写真の権限の文言は `Info.plist` の `NSPhotoLibraryAddUsageDescription` のみ |
+| 「話し言葉も見る」（1.0.2 から・既定はオフ）は端末の中だけで認識し、言葉はメモリにだけ持つ。権限は初めてオンにしたときだけ求める | `SpeechRecognizerGateway.swift` の `requiresOnDeviceRecognition = true`・`Info.plist` の `NSSpeechRecognitionUsageDescription`（訳は `InfoPlist.xcstrings`）。根拠の文書は tightcut-app の `docs/design-retake-filler.md` §6.4・§6.6・§8.3・§10 と `docs/decisions.md` の D-39 |
+| 「人の声で判定する」（1.0.2 から・既定はオン）は iOS の音の分類器で、言葉を取り出さない | tightcut-app の `docs/decisions.md` の D-38（`VoiceActivityReader`） |
 | Required Reason API は 2 つ | `PrivacyInfo.xcprivacy` の `CA92.1` / `0A2A.1` |
 | 写真の動画は一時フォルダへ複製、ファイルは置き場所のまま読む | `ImportView.swift`（`PickedMedia` が `TemporaryWorkspace.inputsRoot` へ複製・`fileImporter` はセキュリティスコープで読む） |
 | 複製は別の素材を開く／「最初から」で消え、遅くとも次の起動で消える | `AppModel.swift` の `open` / `startOver`（`TemporaryWorkspace.purgeInputs`）・`TightcutApp.swift` の `TemporaryWorkspace.purgeStaleSessions()` |
 | 仕上がりは Application Support に最新 1 本だけ・バックアップ対象外・起動時に片づける | `ExportStore.swift`（`isExcludedFromBackup`）・`TightcutApp.swift` の `ExportStore.purge()` |
-| UserDefaults に覚える値の一覧 | `AppModel.swift` の `Keys` と、切り抜きの精度の `SegmentationQuality.storageKey`（`BackgroundVideoPipeline.swift`。読み書きは `AppModel.swift`）。**`Keys` だけを見ると 1 つ漏れる** |
+| UserDefaults に覚える値の一覧 | `AppModel.swift` の `Keys`、`SpeechCutController.swift` の `Keys`（`speech.enabled`・`speech.language`）と、切り抜きの精度の `SegmentationQuality.storageKey`（`BackgroundVideoPipeline.swift`。読み書きは `AppModel.swift`）。**`AppModel` の `Keys` だけを見ると 3 つ漏れる** |
 
 App Privacy（ASC の「Appのプライバシー」）の公開は **API では行えない**（ASC の UI 操作）。
 ここに書いた内容と ASC 側の申告を食い違わせないこと。

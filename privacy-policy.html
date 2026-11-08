@@ -9,7 +9,7 @@
 <body>
   <p class="meta"><a href="privacy-policy-ja.html" lang="ja" hreflang="ja">日本語版</a> · <a href="index.html">Tightcut home</a></p>
   <h1>Privacy Policy — Tightcut</h1>
-  <p class="meta">Revised 6 October 2026</p>
+  <p class="meta">Revised 8 November 2026</p>
 
   <p>This is Naruberio LLC&#39;s account of what becomes of information when you use <strong>Tightcut</strong>, our
   iPhone app for cutting the pauses out of recordings.</p>
@@ -31,14 +31,29 @@
 
   <h3>Working on it</h3>
   <ul>
-    <li><strong>Finding the silence.</strong> Tightcut tracks how loud the sound is over time, on the phone. It does
-    <strong>not</strong> convert speech to text, pick out words, or work out who is speaking.</li>
+    <li><strong>Finding the silence.</strong> Tightcut tracks how loud the sound is over time, on the phone. While
+    <strong>Detect voices</strong> is on (as it is at first), a sound classifier that comes with iOS also judges
+    whether each short stretch sounds like a human voice. That check yields no words and runs on the phone too.
+    Neither step works out who is speaking.</li>
+    <li><strong>Suggesting restarted sentences and filler sounds.</strong> This happens only if you turn on
+    <strong>Also check speech</strong> in the silence settings; it is off until you do. Tightcut then passes the
+    spoken stretches of the clip, one at a time, to Apple&#39;s speech recognizer on this iPhone, which is told to
+    work on the phone alone. From the words that come back, a sentence you started and then said again, and a
+    stretch made up only of a sound such as “um” or “uh”, are added to the list of ranges to remove; tap any of them
+    to keep it. When the language you pick cannot be recognised on this iPhone itself, the switch will not turn on,
+    or a stretch the phone fails to recognise simply gets no suggestion. Tightcut has no fallback that sends speech
+    away to be recognised. The sound is read from the clip itself, so nothing is
+    recorded.</li>
     <li><strong>Changing the background.</strong> People are located by Apple&#39;s Vision framework, which runs on
     the device. With the green-screen option, the background is picked out by its colour instead. No frame is sent
     anywhere, and no picture is used to train anything.</li>
     <li><strong>Playing it backwards.</strong> The frames and the sound are rewritten in reverse order on the
     phone.</li>
   </ul>
+  <p>The words recognised for those suggestions serve only to pick them and to label each row of the list. They
+  are held in the app&#39;s memory and nowhere else — not in a file, not in its settings, not in a log — and they
+  are thrown away when you open another clip, tap Start over, or turn Also check speech off. Neither the sound nor
+  the words leave the phone. Tightcut does not hand you a transcript or captions.</p>
   <p>Whatever you switch on runs as one export on your iPhone. Nothing waits in a queue elsewhere, nothing is
   uploaded, and nothing is processed remotely.</p>
 
@@ -57,11 +72,19 @@
   </ul>
 
   <h3>Getting the result out</h3>
-  <p><strong>Save to Photos</strong> is the only step that needs a permission, and iOS asks for it only when you tap
+  <p>Of the ways out, only <strong>Save to Photos</strong> needs a permission, and iOS asks for it only when you tap
   that button. Tightcut asks for <strong>add-only</strong> access: it can place a new video in your library but
   <strong>cannot read</strong> what is there. Saying no is fine — <strong>Share</strong> and <strong>Save to
   Files</strong> work with no permission at all.</p>
-  <p>Tightcut never asks for the camera, the microphone, contacts, location, Health or Bluetooth.</p>
+  <h3>The speech recognition permission</h3>
+  <p>Also check speech is the one feature that needs <strong>Speech Recognition</strong> access. The first time you
+  turn it on, a single sentence appears in the sheet saying that the clip&#39;s speech will be listened to here on
+  this iPhone to find candidates, with <strong>Continue</strong> and <strong>Not Now</strong>. iOS puts its own
+  question to you only after Continue; Tightcut never raises it at launch or when you bring in a clip. If you say
+  no, or choose Not Now, the switch goes back to off. Removing silence, changing the background and playing a clip
+  backwards all work without this permission.</p>
+  <p>Beyond add-only Photos access and Speech Recognition, Tightcut never asks for the camera, the microphone, contacts, location, Health or
+  Bluetooth.</p>
 
   <h2 id="collected">What the app sends Naruberio: nothing</h2>
   <p>Tightcut <strong>collects no personal information</strong>. Going through it type by type:</p>
@@ -70,6 +93,8 @@
     create.</li>
     <li><strong>Videos, sound, pictures and files</strong> — not collected: they are handled on the phone and never
     sent.</li>
+    <li><strong>Words recognised from speech</strong> — not collected: they exist only in the app&#39;s memory on
+    the phone while you work on a clip.</li>
     <li><strong>Location</strong> — not collected: no feature uses it.</li>
     <li><strong>Identifiers for your device or for advertising</strong> — not collected: there is no tracking and no
     advertising.</li>
@@ -86,7 +111,8 @@
   <table>
     <tr><th>Reason code</th><th>Interface</th><th>Used for</th></tr>
     <tr><td><code>CA92.1</code></td><td>UserDefaults</td><td>Keeping your choices for next time: sensitivity, a level
-    you set yourself, breathing room, speed, order, sound, and cutout quality</td></tr>
+    you set yourself, breathing room, whether to detect voices, whether to check speech and in which language, speed,
+    order, sound, and cutout quality</td></tr>
     <tr><td><code>0A2A.1</code></td><td>File timestamps</td><td>Creating and deleting Tightcut&#39;s own working
     files, and keeping them out of device backups</td></tr>
   </table>
