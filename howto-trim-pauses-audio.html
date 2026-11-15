@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>How to trim silent pauses from a podcast or recording on iPhone | Tightcut</title>
+  <meta name="description" content="Steps to find and remove the gaps where nobody speaks in an audio file with Tightcut. Check the list of cuts before exporting. Everything runs on your iPhone.">
+  <!-- Use-case page (KAN-1242). English is canonical. Button names match the en strings of the live 1.0.1 word for word.
+       Audio-only files come in through "Choose from Files" (ImportView's fileImporter accepts .movie and .audio).
+       Saving is described through "Share" only ("Save to Files" with audio has not been checked on a device). -->
+  <link rel="canonical" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html">
+  <link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html">
+  <link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tightcut">
+  <meta property="og:title" content="How to trim silent pauses from a podcast or recording on iPhone">
+  <meta property="og:description" content="Find the gaps where nobody speaks, check the list, then tighten the recording.">
+  <meta property="og:url" content="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html">
+  <link rel="stylesheet" href="./howto.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "How to trim silent pauses from a podcast or recording on iPhone",
+        "inLanguage": "en",
+        "url": "https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html",
+        "dateModified": "2026-11-15",
+        "tool": {"@type": "HowToTool", "name": "Tightcut (iPhone app)"},
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Open Tightcut, tap [Choose from Files] and pick an audio file in the Files app."},
+          {"@type": "HowToStep", "position": 2, "text": "[Remove silence] is turned on and the card at the top shows Original, Result and Shorter by."},
+          {"@type": "HowToStep", "position": 3, "text": "Tap the text of [Remove silence] and check the parts listed under [Parts to remove]. Tap a row to keep that part."},
+          {"@type": "HowToStep", "position": 4, "text": "Use [Sensitivity] and [Breathing room] to decide how tight it gets, then tap [Done]."},
+          {"@type": "HowToStep", "position": 5, "text": "Tap [Export]. When [Export finished] appears, tap [Share] and choose where to send or save the file."}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": "en",
+        "mainEntity": [
+          {"@type": "Question", "name": "Does it work with audio files, not just videos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With [Choose from Files] you can pick an audio file in the Files app."}},
+          {"@type": "Question", "name": "Is my recording uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Finding the silence and exporting both happen on your iPhone. Tightcut never connects to the network."}},
+          {"@type": "Question", "name": "Will every thinking pause be removed?", "acceptedAnswer": {"@type": "Answer", "text": "Before you export, the parts to be removed are listed under [Parts to remove]. Tap a row to keep a pause you want."}},
+          {"@type": "Question", "name": "Will words get cut off at the joins?", "acceptedAnswer": {"@type": "Answer", "text": "[Breathing room] keeps a little sound before and after each cut."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <nav>
+        <a href="./">Tightcut</a>
+        <span class="lang"><span aria-current="page">English</span><a href="./howto-trim-pauses-audio-ja.html" lang="ja" hreflang="ja">日本語</a></span>
+      </nav>
+      <h1>How to trim silent pauses from a podcast or recording on iPhone</h1>
+      <p>Take out only the gaps where nobody speaks. You decide what goes from a list, before anything is exported.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card lift" aria-labelledby="what">
+      <h2 id="what">Same flow for audio-only files</h2>
+      <p>Podcast sessions, interviews, lecture or meeting recordings: material without a picture goes into Tightcut too. It picks up the parts that stay below a loudness level and lists them under <span class="ui">Parts to remove</span>.</p>
+      <p class="strip-label">Recording</p>
+      <div class="strip" role="img" aria-label="Diagram. Silent parts sit between the parts where someone talks."><i class="talk" style="width:24%"></i><i class="gap" style="width:6%"></i><i class="talk" style="width:20%"></i><i class="gap" style="width:14%"></i><i class="talk" style="width:28%"></i><i class="gap" style="width:8%"></i></div>
+      <p class="strip-label">Exported audio</p>
+      <div class="strip" role="img" aria-label="Diagram. The silent parts are gone and the talking parts are joined." style="width:72%"><i class="talk" style="width:33.3%"></i><i class="talk" style="width:27.8%;opacity:.85"></i><i class="talk" style="width:38.9%"></i></div>
+      <p class="note">A diagram, not a measurement of a real recording.</p>
+    </section>
+
+    <section class="card" aria-labelledby="steps">
+      <h2 id="steps">Steps in Tightcut</h2>
+      <ol class="flow">
+        <li><span class="where">First screen</span>Tap <span class="ui">Choose from Files</span> and pick an audio file in the Files app.</li>
+        <li><span class="where">Steps screen</span><span class="ui">Remove silence</span> is turned on and the card at the top shows <span class="ui">Original</span>, <span class="ui">Result</span> and <span class="ui">Shorter by</span>.</li>
+        <li><span class="where">Remove silence › settings</span>Tap the text of <span class="ui">Remove silence</span> and check the parts under <span class="ui">Parts to remove</span>. Tap a row to keep that part.</li>
+        <li><span class="where">Detection</span>Use <span class="ui">Sensitivity</span> (<span class="ui">Strict</span>, <span class="ui">Standard</span>, <span class="ui">Loose</span>) and <span class="ui">Breathing room</span> to decide how tight it gets, then tap <span class="ui">Done</span>.</li>
+        <li><span class="where">Export</span>Tap <span class="ui">Export</span>. When <span class="ui">Export finished</span> appears, tap <span class="ui">Share</span> and choose where to send or save the file.</li>
+      </ol>
+    </section>
+
+    <a class="get" href="https://apps.apple.com/app/apple-store/id6816324988?ct=tcweb-audio-en&amp;mt=8">View Tightcut on the App Store<small>iPhone</small></a>
+
+    <section class="card" aria-labelledby="faq">
+      <h2 id="faq">Questions</h2>
+      <details open><summary>Does it work with audio files, not just videos?</summary><p>Yes. With <span class="ui">Choose from Files</span> you can pick an audio file in the Files app.</p></details>
+      <details><summary>Is my recording uploaded anywhere?</summary><p>No. Finding the silence and exporting both happen on your iPhone. Tightcut never connects to the network.</p></details>
+      <details><summary>Will every thinking pause be removed?</summary><p>Before you export, the parts to be removed are listed under <span class="ui">Parts to remove</span>. Tap a row to keep a pause you want.</p></details>
+      <details><summary>Will words get cut off at the joins?</summary><p><span class="ui">Breathing room</span> keeps a little sound before and after each cut.</p></details>
+    </section>
+
+    <nav class="card more" aria-labelledby="more">
+      <h2 id="more">Another way to use it</h2>
+      <a href="./howto-cut-silence-video.html">How to automatically cut silence and pauses from a video on iPhone</a>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <a href="./support.html">Support</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>How to automatically cut silence and pauses from a video on iPhone | Tightcut</title>
+  <meta name="description" content="Tightcut finds the gaps where nobody speaks, lists them so you can check them, then exports the shorter video in one pass. It runs on your iPhone and keeps the resolution and frame rate. Steps and FAQ.">
+  <!-- Use-case page (KAN-1242). English is canonical. Button names match the en strings of the live 1.0.1 (Localizable.xcstrings) word for word.
+       No free alternatives, no limits of the App, no price or billing model (soundpull-app D-58 / D-59, tightcut-app store-metadata §3). -->
+  <link rel="canonical" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html">
+  <link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html">
+  <link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tightcut">
+  <meta property="og:title" content="How to automatically cut silence and pauses from a video on iPhone">
+  <meta property="og:description" content="Find the gaps where nobody speaks, check the list, export once.">
+  <meta property="og:url" content="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html">
+  <link rel="stylesheet" href="./howto.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "How to automatically cut silence and pauses from a video on iPhone",
+        "inLanguage": "en",
+        "url": "https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html",
+        "dateModified": "2026-11-15",
+        "tool": {"@type": "HowToTool", "name": "Tightcut (iPhone app)"},
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Open Tightcut and pick a video with [Choose from Photos] or [Choose from Files]."},
+          {"@type": "HowToStep", "position": 2, "text": "When the file is read, [Remove silence] is turned on and the card at the top shows Original, Result and Shorter by."},
+          {"@type": "HowToStep", "position": 3, "text": "Tap the text of [Remove silence] to open its settings. [Parts to remove] lists every part that will be cut, with its start and end time. Tap a row to keep that part."},
+          {"@type": "HowToStep", "position": 4, "text": "If too much or too little is picked up, set [Sensitivity] to Strict, Standard or Loose. If the start or end of words gets clipped, widen [Breathing room]. Tap [Done]."},
+          {"@type": "HowToStep", "position": 5, "text": "Tap [Export] at the bottom. When [Export finished] appears, choose [Save to Photos], [Save to Files] or [Share]."}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": "en",
+        "mainEntity": [
+          {"@type": "Question", "name": "Is my video uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Reading the file, finding the silence and exporting all happen on your iPhone. Tightcut never connects to the network."}},
+          {"@type": "Question", "name": "Can I see what will be cut before exporting?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Open the settings of [Remove silence]: [Parts to remove] lists each part with its start, end and length. Tap a row to keep that part."}},
+          {"@type": "Question", "name": "Will it clip the start or end of my words?", "acceptedAnswer": {"@type": "Answer", "text": "[Breathing room] keeps a little sound before and after each cut. If words still get clipped, widen it."}},
+          {"@type": "Question", "name": "Does exporting lower the quality?", "acceptedAnswer": {"@type": "Answer", "text": "The resolution and frame rate of your file are kept."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <nav>
+        <a href="./">Tightcut</a>
+        <span class="lang"><span aria-current="page">English</span><a href="./howto-cut-silence-video-ja.html" lang="ja" hreflang="ja">日本語</a></span>
+      </nav>
+      <h1>How to automatically cut silence and pauses from a video on iPhone</h1>
+      <p>Tightcut finds the gaps where nobody speaks and lists them. You check what will go, then export once.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card lift" aria-labelledby="what">
+      <h2 id="what">What happens to your clip</h2>
+      <p>Tightcut reads the sound of the video and treats the parts that stay below a loudness level as gaps where nobody speaks. Before anything is cut, it shows those parts as a list, and you can bring any of them back one row at a time.</p>
+      <p class="strip-label">Your video</p>
+      <div class="strip" role="img" aria-label="Diagram. Silent parts sit between the parts where someone talks."><i class="talk" style="width:18%"></i><i class="gap" style="width:9%"></i><i class="talk" style="width:22%"></i><i class="gap" style="width:12%"></i><i class="talk" style="width:15%"></i><i class="gap" style="width:7%"></i><i class="talk" style="width:17%"></i></div>
+      <p class="strip-label">The exported video</p>
+      <div class="strip" role="img" aria-label="Diagram. The silent parts are gone and the talking parts are joined." style="width:72%"><i class="talk" style="width:25%"></i><i class="talk" style="width:30.5%;opacity:.85"></i><i class="talk" style="width:20.8%"></i><i class="talk" style="width:23.7%;opacity:.85"></i></div>
+      <p class="note">A diagram, not a measurement of a real clip. The striped parts are the [Parts to remove].</p>
+    </section>
+
+    <section class="card" aria-labelledby="steps">
+      <h2 id="steps">Steps in Tightcut</h2>
+      <ol class="flow">
+        <li><span class="where">First screen</span>Tap <span class="ui">Choose from Photos</span> for a video in your photo library, or <span class="ui">Choose from Files</span> for one in the Files app.</li>
+        <li><span class="where">Steps screen</span>When the file is read, <span class="ui">Remove silence</span> is turned on and the dark green card at the top shows <span class="ui">Original</span>, <span class="ui">Result</span> and <span class="ui">Shorter by</span>.</li>
+        <li><span class="where">Remove silence › settings</span>Tap the text of <span class="ui">Remove silence</span>. <span class="ui">Parts to remove</span> lists every part that will be cut, with its start and end time. Tap a row to keep that part.</li>
+        <li><span class="where">Detection</span>If too much or too little is picked up, set <span class="ui">Sensitivity</span> to <span class="ui">Strict</span>, <span class="ui">Standard</span> or <span class="ui">Loose</span>. To set it precisely, turn on <span class="ui">Set the level myself</span>. If the start or end of words gets clipped, widen <span class="ui">Breathing room</span>, then tap <span class="ui">Done</span>.</li>
+        <li><span class="where">Export</span>Tap <span class="ui">Export</span> at the bottom. When <span class="ui">Export finished</span> appears, choose <span class="ui">Save to Photos</span>, <span class="ui">Save to Files</span> or <span class="ui">Share</span>.</li>
+      </ol>
+      <p class="note">Under <span class="ui">Also in the same export</span> on the same screen you can also turn on <span class="ui">Change the background</span> and <span class="ui">Play backwards</span>. Everything you pick runs in one export.</p>
+    </section>
+
+    <a class="get" href="https://apps.apple.com/app/apple-store/id6816324988?ct=tcweb-silence-en&amp;mt=8">View Tightcut on the App Store<small>iPhone</small></a>
+
+    <section class="card" aria-labelledby="faq">
+      <h2 id="faq">Questions</h2>
+      <details open><summary>Is my video uploaded anywhere?</summary><p>No. Reading the file, finding the silence and exporting all happen on your iPhone. Tightcut never connects to the network.</p></details>
+      <details><summary>Can I see what will be cut before exporting?</summary><p>Yes. Open the settings of <span class="ui">Remove silence</span>: <span class="ui">Parts to remove</span> lists each part with its start, end and length. Tap a row to keep that part.</p></details>
+      <details><summary>Will it clip the start or end of my words?</summary><p><span class="ui">Breathing room</span> keeps a little sound before and after each cut. If words still get clipped, widen it.</p></details>
+      <details><summary>Does exporting lower the quality?</summary><p>The resolution and frame rate of your file are kept.</p></details>
+    </section>
+
+    <nav class="card more" aria-labelledby="more">
+      <h2 id="more">Another way to use it</h2>
+      <a href="./howto-trim-pauses-audio.html">How to trim silent pauses from a podcast or recording on iPhone</a>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <a href="./support.html">Support</a><a href="./privacy-policy.html">Privacy Policy</a><a href="./terms.html">Terms of Service</a>
+  </footer>
+</body>
+</html>

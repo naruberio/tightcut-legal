@@ -3,10 +3,10 @@
 | 項目 | 内容 |
 | --- | --- |
 | 作成日 | 2026-09-23 |
-| 更新日 | 2026-10-06 |
-| バージョン | 2026.10.06 |
+| 更新日 | 2026-11-15 |
+| バージョン | 2026.11.15 |
 | 作成者 | 大森 |
-| 更新者 | 大森 |
+| 更新者 | Claude（@大森 の指示・KAN-1242） |
 
 iOS アプリ「Tightcut」（動画の無音カット・買い切り）のプライバシーポリシー・利用規約・サポートを
 公開するための GitHub Pages 用リポジトリです。Jira: **KAN-833**（エピック KAN-814）。
@@ -35,6 +35,23 @@ Markdown + Jekyll ではなく **HTML を正本**にする（mixroll-legal と�
 （二重管理になり、審査に出した版とずれる）。
 
 スタイルは `style.css` 1 本に寄せている（ページごとに `<style>` を写すと 7 か所の重複になる）。
+
+## 用途別のページ（KAN-1242・案）
+
+検索や AI の回答から拾われる入口として、用途別のページを 2 用途 × en / ja の 4 枚置く。見た目は `howto.css`（法務ページの `style.css` とは分ける）。
+
+| 用途 | en | ja | App Store へのリンクの `ct` |
+| --- | --- | --- | --- |
+| 動画の無音・間を自動でカットする | `howto-cut-silence-video.html` | `howto-cut-silence-video-ja.html` | `tcweb-silence-en` / `tcweb-silence-ja` |
+| ポッドキャスト・録音の無音を詰める | `howto-trim-pauses-audio.html` | `howto-trim-pauses-audio-ja.html` | `tcweb-audio-en` / `tcweb-audio-ja` |
+
+- 書いてよいのは**公開中の版に入っている機能だけ**（2026-11-15 時点は 1.0.1 = タグ `tf-004` の `ebabde7`。人の声の判定（KAN-1235）と話し言葉の候補（KAN-1236）は 1.0.1 に入っていないので書かない）。
+  ボタン名は `Shared/Resources/Localizable.xcstrings` の en / ja と一字一句そろえる。アプリの文言が変わったら同じ作業で直す
+- **無料の代替手段へ読者を送る記述と、Tightcut 自身の制約（端末・OS・同時に使えない組み合わせ・上限など）を書かない**（soundpull-app D-58・D-59 を全アプリに当てる）。制約はサポートのページと利用規約に置く
+- **価格・課金の形も書かない**（tightcut-app `docs/store-metadata.md` §3。価格を変えてもページを直さずに済むように）
+- 各ページの JSON-LD（`HowTo` と `FAQPage`）は、本文の手順と問答から文を取る。本文を変えたら JSON-LD と `dateModified` も直す
+- App Store へのリンクは `https://apps.apple.com/app/apple-store/id6816324988?ct=<上の値>&mt=8`。`pt` が無いので Analytics の Campaign には計上されない（FrameSmoother・Readglide と同じ）
+- `sitemap.xml` は手で持つ（Jekyll を通さないため）。ページを足したら同じ作業で直す。Search Console・Bing への登録は @大森 の画面の操作
 
 ## 言語
 
