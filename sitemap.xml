@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://naruberio.github.io/tightcut-legal/</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html"/>
+  </url>
+  <url>
+    <loc>https://naruberio.github.io/tightcut-legal/howto-cut-silence-video-ja.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-cut-silence-video.html"/>
+  </url>
+  <url>
+    <loc>https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html"/>
+  </url>
+  <url>
+    <loc>https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html"/>
+  </url>
+  <url><loc>https://naruberio.github.io/tightcut-legal/support.html</loc></url>
+  <url><loc>https://naruberio.github.io/tightcut-legal/support-ja.html</loc></url>
+  <url><loc>https://naruberio.github.io/tightcut-legal/privacy-policy.html</loc></url>
+  <url><loc>https://naruberio.github.io/tightcut-legal/privacy-policy-ja.html</loc></url>
+  <url><loc>https://naruberio.github.io/tightcut-legal/terms.html</loc></url>
+  <url><loc>https://naruberio.github.io/tightcut-legal/terms-ja.html</loc></url>
+</urlset>

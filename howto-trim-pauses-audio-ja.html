@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>iPhone でポッドキャスト・録音の無音を詰める方法 | Tightcut</title>
+  <meta name="description" content="録音した音声ファイルから、話していない間を Tightcut で見つけて詰める手順。切る区間を一覧で確かめてから書き出します。処理は iPhone の中だけ。">
+  <!-- 用途別の説明ページ（KAN-1242）。英語版が正本。ボタン名は公開中の 1.0.1 の ja の表示と一字一句そろえる。
+       音声だけの素材は「ファイルから選ぶ」から入る（ImportView の fileImporter が .movie と .audio を受ける）。
+       保存は「共有」で案内する（「ファイルに保存」の音声での動きは実機で確かめていないため、手順に書かない） -->
+  <link rel="canonical" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html">
+  <link rel="alternate" hreflang="en" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html">
+  <link rel="alternate" hreflang="ja" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tightcut">
+  <meta property="og:title" content="iPhone でポッドキャスト・録音の無音を詰める方法">
+  <meta property="og:description" content="話していない間を見つけて一覧にし、確かめてから詰める。">
+  <meta property="og:url" content="https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html">
+  <link rel="stylesheet" href="./howto.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": "iPhone でポッドキャスト・録音の無音を詰める方法",
+        "inLanguage": "ja",
+        "url": "https://naruberio.github.io/tightcut-legal/howto-trim-pauses-audio-ja.html",
+        "dateModified": "2026-11-15",
+        "tool": {"@type": "HowToTool", "name": "Tightcut（iPhone アプリ）"},
+        "step": [
+          {"@type": "HowToStep", "position": 1, "text": "Tightcut を開き、［ファイルから選ぶ］で「ファイル」App にある音声ファイルを選びます。"},
+          {"@type": "HowToStep", "position": 2, "text": "［無音を落とす］が入った状態になり、上のカードに元の長さ・できあがり・短縮率が出ます。"},
+          {"@type": "HowToStep", "position": 3, "text": "［無音を落とす］の文字の部分をタップし、［落とす区間］で切る区間を確かめます。残したい区間は行をタップします。"},
+          {"@type": "HowToStep", "position": 4, "text": "［感度］と［前後の余白］で詰め具合を決め、［完了］で戻ります。"},
+          {"@type": "HowToStep", "position": 5, "text": "［書き出す］をタップし、［書き出しました］と出たら［共有］から保存先やアプリを選びます。"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "inLanguage": "ja",
+        "mainEntity": [
+          {"@type": "Question", "name": "動画ではなく音声だけのファイルでも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。［ファイルから選ぶ］で、「ファイル」App にある音声ファイルを選べます。"}},
+          {"@type": "Question", "name": "録音はどこかへアップロードされますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。無音の判定も書き出しも iPhone の中で行い、Tightcut は通信をしません。"}},
+          {"@type": "Question", "name": "考えながら話した「間」も全部消えてしまいますか？", "acceptedAnswer": {"@type": "Answer", "text": "消える区間は書き出す前に［落とす区間］で一覧になります。残したい間は行をタップすれば残ります。"}},
+          {"@type": "Question", "name": "つなぎ目で言葉が途切れませんか？", "acceptedAnswer": {"@type": "Answer", "text": "［前後の余白］で、切れ目の前後に少しだけ音を残せます。"}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="band">
+    <div class="band-inner">
+      <nav>
+        <a href="./">Tightcut</a>
+        <span class="lang"><a href="./howto-trim-pauses-audio.html" lang="en" hreflang="en">English</a><span aria-current="page">日本語</span></span>
+      </nav>
+      <h1>iPhone でポッドキャスト・録音の無音を詰める方法</h1>
+      <p>録りっぱなしの音声から、話していない間だけを抜きます。どこを詰めるかは、書き出す前に一覧で決められます。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card lift" aria-labelledby="what">
+      <h2 id="what">音声だけの素材でも同じ流れ</h2>
+      <p>ポッドキャストの収録、インタビュー、授業や会議の録音のように、映像の無い素材も Tightcut に入れられます。音の大きさがしきい値を下回る区間を拾い、<span class="ui">落とす区間</span> に並べます。</p>
+      <p class="strip-label">録音</p>
+      <div class="strip" role="img" aria-label="模式図。話している区間の間に、無音の区間が挟まっている。"><i class="talk" style="width:24%"></i><i class="gap" style="width:6%"></i><i class="talk" style="width:20%"></i><i class="gap" style="width:14%"></i><i class="talk" style="width:28%"></i><i class="gap" style="width:8%"></i></div>
+      <p class="strip-label">書き出した音声</p>
+      <div class="strip" role="img" aria-label="模式図。無音の区間が抜けて、話している区間だけがつながっている。" style="width:72%"><i class="talk" style="width:33.3%"></i><i class="talk" style="width:27.8%;opacity:.85"></i><i class="talk" style="width:38.9%"></i></div>
+      <p class="note">模式図です（実際の録音の測定ではありません）。</p>
+    </section>
+
+    <section class="card" aria-labelledby="steps">
+      <h2 id="steps">Tightcut での手順</h2>
+      <ol class="flow">
+        <li><span class="where">最初の画面</span><span class="ui">ファイルから選ぶ</span> をタップし、「ファイル」App にある音声ファイルを選びます。</li>
+        <li><span class="where">手順の画面</span><span class="ui">無音を落とす</span> が入った状態になり、上のカードに <span class="ui">元の長さ</span>・<span class="ui">できあがり</span>・<span class="ui">短縮率</span> が出ます。</li>
+        <li><span class="where">無音を落とす › 調整</span><span class="ui">無音を落とす</span> の文字の部分をタップし、<span class="ui">落とす区間</span> で切る区間を確かめます。残したい区間は行をタップします。</li>
+        <li><span class="where">検出の調整</span><span class="ui">感度</span>（<span class="ui">厳しめ</span>・<span class="ui">標準</span>・<span class="ui">ゆるめ</span>）と <span class="ui">前後の余白</span> で詰め具合を決め、<span class="ui">完了</span> で戻ります。</li>
+        <li><span class="where">書き出し</span><span class="ui">書き出す</span> をタップします。<span class="ui">書き出しました</span> と出たら、<span class="ui">共有</span> から保存先やアプリを選びます。</li>
+      </ol>
+    </section>
+
+    <a class="get" href="https://apps.apple.com/app/apple-store/id6816324988?ct=tcweb-audio-ja&amp;mt=8">App Store で Tightcut を見る<small>iPhone</small></a>
+
+    <section class="card" aria-labelledby="faq">
+      <h2 id="faq">よくある質問</h2>
+      <details open><summary>動画ではなく音声だけのファイルでも使えますか？</summary><p>はい。<span class="ui">ファイルから選ぶ</span> で、「ファイル」App にある音声ファイルを選べます。</p></details>
+      <details><summary>録音はどこかへアップロードされますか？</summary><p>いいえ。無音の判定も書き出しも iPhone の中で行い、Tightcut は通信をしません。</p></details>
+      <details><summary>考えながら話した「間」も全部消えてしまいますか？</summary><p>消える区間は書き出す前に <span class="ui">落とす区間</span> で一覧になります。残したい間は行をタップすれば残ります。</p></details>
+      <details><summary>つなぎ目で言葉が途切れませんか？</summary><p><span class="ui">前後の余白</span> で、切れ目の前後に少しだけ音を残せます。</p></details>
+    </section>
+
+    <nav class="card more" aria-labelledby="more">
+      <h2 id="more">ほかの使い方</h2>
+      <a href="./howto-cut-silence-video-ja.html">iPhone で動画の無音・間を自動でカットする方法</a>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <a href="./support-ja.html">サポート</a><a href="./privacy-policy-ja.html">プライバシーポリシー</a><a href="./terms-ja.html">利用規約</a>
+  </footer>
+</body>
+</html>

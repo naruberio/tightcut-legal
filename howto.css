@@ -1,0 +1,90 @@
+/* Tightcut の用途別ページ（KAN-1242）の見た目。
+   法務ページの style.css とは分ける（あちらは白地の文書、こちらはアプリの深緑とライムに寄せた入口）。
+   SoundPull（明るい地・紫・結論の枠）・FrameSmoother（暗いグラファイト・琥珀・章札）・
+   Readglide（紙の地・場面の物語）と、地の色・部品・章立てを分ける（全社の重複チェック ①②）。 */
+:root {
+  --canvas: #e3efe4;
+  --card: #ffffff;
+  --deep: #0a4232;
+  --lime: #c4ec78;
+  --ink: #14211c;
+  --muted: #4d5e57;
+  --line: #c9dccd;
+  --cut: #9fb5a8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #101a16;
+    --card: #1c2622;
+    --deep: #1d4a3c;
+    --ink: #e6efe9;
+    --muted: #a3b5ab;
+    --line: #2c3b35;
+    --cut: #3d5249;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.75;
+  color: var(--ink);
+  background: var(--canvas);
+}
+a { color: inherit; }
+.band {
+  background: var(--deep);
+  color: #fff;
+  padding: 1.1rem 1rem 2.4rem;
+}
+.band-inner, main, .foot { max-width: 760px; margin: 0 auto; }
+.band nav { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; }
+.band nav a { color: #fff; text-decoration: none; }
+.band nav .lang a, .band nav .lang span { margin-left: 0.6rem; }
+.band nav .lang span { color: var(--lime); }
+.band h1 { font-size: 1.65rem; line-height: 1.35; margin: 1.6rem 0 0.6rem; }
+.band p { margin: 0; color: #dfeee5; }
+main { padding: 0 1rem 3rem; }
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 1.2rem 1.25rem;
+  margin: 1.1rem 0;
+}
+.lift { margin-top: -1.6rem; }
+h2 { font-size: 1.15rem; margin: 0 0 0.6rem; }
+.strip-label { font-size: 0.85rem; color: var(--muted); margin: 0.6rem 0 0.25rem; }
+.strip { display: flex; height: 26px; border-radius: 8px; overflow: hidden; }
+.strip i { display: block; height: 100%; }
+.strip .talk { background: var(--deep); }
+.strip .gap { background: var(--cut); background-image: repeating-linear-gradient(135deg, transparent 0 5px, rgba(255,255,255,.35) 5px 8px); }
+@media (prefers-color-scheme: dark) { .strip .talk { background: var(--lime); } }
+.note { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; }
+ol.flow { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+ol.flow li { counter-increment: s; position: relative; padding: 0 0 1rem 3rem; }
+ol.flow li::before {
+  content: counter(s);
+  position: absolute; left: 0; top: 0.1rem;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--lime); color: #0a4232; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+ol.flow .where { display: block; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.02em; }
+.ui { font-weight: 600; white-space: nowrap; }
+.ui::before { content: "［"; color: var(--muted); font-weight: 400; }
+.ui::after { content: "］"; color: var(--muted); font-weight: 400; }
+:lang(en) .ui::before { content: "["; }
+:lang(en) .ui::after { content: "]"; }
+details { border-top: 1px solid var(--line); padding: 0.7rem 0; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin: 0.4rem 0 0; }
+.get {
+  display: block; text-align: center; text-decoration: none;
+  background: var(--deep); color: #fff; font-weight: 700;
+  border-radius: 16px; padding: 0.95rem 1rem; margin: 1.4rem 0;
+}
+.get small { display: block; font-weight: 400; color: var(--lime); }
+.more a { display: block; padding: 0.35rem 0; }
+.foot { padding: 1.4rem 1rem 2.5rem; font-size: 0.85rem; color: var(--muted); }
+.foot a { margin-right: 0.8rem; }
